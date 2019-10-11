@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Princip Trainer</title>
+  <link rel="stylesheet" type="text/css" href="/styles/style.css">
+  <link rel="stylesheet" type="text/css" href="/styles/checkbox.css">
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+
+  <link rel="manifest" href="/manifest.json">
+  
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Princip Trainer">
+  <link rel="apple-touch-icon" href="/images/icons/icon-152x152.png">
+  
+  <meta name="description" content="Trenuj principy">
+  
+  <meta name="theme-color" content="#2F3BA2" />
+
+</head>
+<body>
+
+  <header class="header">
+    <h1>Princip Trainer</h1>
+    <button id="butInstall" aria-label="Install" hidden></button>
+  </header>
+
+  <main class="main">
+    <div id="divModeButtons">  
+      <button id="butQuiz" class="mode-button" onclick="onQuizClicked()">Quiz</button>
+      <button id="butRead" class="mode-button disabled" onclick="onReadClicked()">Read</button>
+    </div>
+    <div id="content">
+      <div id="divAlphabet" class="align-center div-alphabet">
+        <img id="n" src="/images/alphabets/n/20.png" class="image-alphabet" onclick="onAlphabetClicked('n')">
+        <img id="m" src="/images/alphabets/m/18.png" class="image-alphabet" onclick="onAlphabetClicked('m')">
+        <img id="b" src="/images/alphabets/b/5.png" class="image-alphabet" onclick="onAlphabetClicked('b')">
+        <img id="s" src="/images/alphabets/s/14.png" class="image-alphabet" onclick="onAlphabetClicked('s')">
+        <img id="bin" src="/images/alphabets/bin/21.png" class="image-alphabet" onclick="onAlphabetClicked('bin')">
+        <img id="t" src="/images/alphabets/t/10.png" class="image-alphabet" onclick="onAlphabetClicked('t')">
+      </div>
+      <div id="quiz" class="quiz">
+        <div class="invert-switch">
+          <span class="invert-text">Invert</span>
+          <br>
+          <label class="switch">
+            <input id="invert" type="checkbox" onclick="getNewQuestion()">
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div id="divQuestion" class="div-question">
+          <img id="imgQuestion" src="/images/alphabets/a/20.png" class="image-question">
+        </div>
+        <div class="align-center">
+          <img id="answer0" src="/images/alphabets/a/1.png" class="image-answer" onclick="onAnswerClicked(0)">
+          <img id="answer1" src="/images/alphabets/a/2.png" class="image-answer" onclick="onAnswerClicked(1)">
+          <img id="answer2" src="/images/alphabets/a/3.png" class="image-answer" onclick="onAnswerClicked(2)">
+          <img id="answer3" src="/images/alphabets/a/4.png" class="image-answer" onclick="onAnswerClicked(3)">
+          <img id="answer4" src="/images/alphabets/a/5.png" class="image-answer" onclick="onAnswerClicked(4)">
+        </div>
+      </div>
+      <div id="read" class="read">
+        <div id="readGrid" class="grid-container">
+          <img id="gridItem0" src="/images/alphabets/a/1.png" class="image-grid">
+          <img id="gridItem1" src="/images/alphabets/a/1.png" class="image-grid">
+          <img id="gridItem2" src="/images/alphabets/a/1.png" class="image-grid">
+          <img id="gridItem3" src="/images/alphabets/a/1.png" class="image-grid">
+          <img id="gridItem4" src="/images/alphabets/a/1.png" class="image-grid">
+          <img id="gridItem5" src="/images/alphabets/a/1.png" class="image-grid">
+          <img id="gridItem6" src="/images/alphabets/a/1.png" class="image-grid">
+          <img id="gridItem7" src="/images/alphabets/a/1.png" class="image-grid">
+          <img id="gridItem8" src="/images/alphabets/a/1.png" class="image-grid">
+          <img id="gridItem9" src="/images/alphabets/a/1.png" class="image-grid">
+          <img id="gridItem10" src="/images/alphabets/a/1.png" class="image-grid">
+          <img id="gridItem11" src="/images/alphabets/a/1.png" class="image-grid">
+          <img id="gridItem12" src="/images/alphabets/a/1.png" class="image-grid">
+          <img id="gridItem13" src="/images/alphabets/a/1.png" class="image-grid">
+          <img id="gridItem14" src="/images/alphabets/a/1.png" class="image-grid">
+          <img id="gridItem15" src="/images/alphabets/a/1.png" class="image-grid">
+          <img id="gridItem16" src="/images/alphabets/a/1.png" class="image-grid">
+          <img id="gridItem17" src="/images/alphabets/a/1.png" class="image-grid">
+          <img id="gridItem18" src="/images/alphabets/a/1.png" class="image-grid">
+          <img id="gridItem19" src="/images/alphabets/a/1.png" class="image-grid">
+        </div>
+        <div id="readSolution" class="align-center solution">
+        </div>
+      </div>
+      <div id="divBottomButtons" class="align-center">
+        <button id="butSolution" class="mode-button" onclick="onSolutionClicked()">Solution</button>
+        <button id="butNext" class="mode-button" onclick="onNextClicked()">Next</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="/scripts/app.js"></script>
+  <script src="/scripts/install.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+            .then((reg) => {
+              console.log('Service worker registered.', reg);
+            });
+      });
+    }
+  </script>
+
+</body>
+</html>
