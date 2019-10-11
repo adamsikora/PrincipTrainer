@@ -25,13 +25,13 @@
 
   <header class="header">
     <h1>Princip Trainer</h1>
-    <button id="butInstall" aria-label="Install" hidden></button>
+    <button id="butQuiz" class="mode-button" onclick="onQuizClicked()">Quiz</button>
+    <button id="butRead" class="mode-button disabled" onclick="onReadClicked()">Read</button>
+    <button id="butInstall" class="command-button" aria-label="Install" hidden></button>
   </header>
 
   <main class="main">
     <div id="divModeButtons">  
-      <button id="butQuiz" class="mode-button" onclick="onQuizClicked()">Quiz</button>
-      <button id="butRead" class="mode-button disabled" onclick="onReadClicked()">Read</button>
     </div>
     <div id="content">
       <div id="divAlphabet" class="align-center div-alphabet">
@@ -89,8 +89,8 @@
         </div>
       </div>
       <div id="divBottomButtons" class="align-center">
-        <button id="butSolution" class="mode-button" onclick="onSolutionClicked()">Solution</button>
-        <button id="butNext" class="mode-button" onclick="onNextClicked()">Next</button>
+        <button id="butSolution" class="solution-button" onclick="onSolutionClicked()">Solution</button>
+        <button id="butNext" class="solution-button" onclick="onNextClicked()">Next</button>
       </div>
     </div>
   </main>

@@ -19,7 +19,7 @@ var dictionary = null
 function onQuizClicked() {
   mode = "quiz"
   document.getElementById('butQuiz').style.opacity = 1
-  document.getElementById('butRead').style.opacity = 0.6
+  document.getElementById('butRead').style.opacity = 0.3
   document.getElementById('quiz').style.display = "inherit"
   document.getElementById('read').style.display = "none"
   getNewQuestion()
@@ -28,7 +28,7 @@ function onQuizClicked() {
 function onReadClicked() {
   mode = "read"
   document.getElementById('butRead').style.opacity = 1
-  document.getElementById('butQuiz').style.opacity = 0.6
+  document.getElementById('butQuiz').style.opacity = 0.3
   document.getElementById('read').style.display = "inherit"
   document.getElementById('quiz').style.display = "none"
   getNewQuestion()

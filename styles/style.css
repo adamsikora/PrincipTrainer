@@ -65,7 +65,7 @@ body {
   margin: 0;
 }
 
-.header button {
+.command-button {
   border: none;
   cursor: pointer;
   height: 24px;
@@ -103,17 +103,30 @@ body {
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  font-size: 70%;
+  cursor: pointer;
+  margin-right: 2%;
+}
+
+.solution-button {
+  background-color: #2F3BA2;
+  border: none;
+  color: white;
+  padding: 2.5% 2.5%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
   font-size: 100%;
   margin: 2% 1%;
   cursor: pointer;
 }
 
 .disabled {
-  opacity: 0.6;
+  opacity: 0.3;
 }
 
 .align-center {
-  margin-top: 5%;
+  margin-top: 3%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,7 +167,7 @@ body {
   display: grid;
   grid-template-columns: auto auto auto auto auto;
   grid-gap: 5px;
-  margin-top: 8%;
+  margin-top: 7%;
   margin-left: 10px;
   margin-right: 10px;
 }
